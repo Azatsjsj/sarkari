@@ -1,0 +1,50 @@
+@extends('admin.layout')
+
+@section('title', 'Manage Courses')
+@section('content')
+<div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2"><i class="fas fa-graduation-cap me-2"></i>Courses</h1>
+    <a href="{{ route('admin.courses.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>Add New Course</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Course Name</th>
+                    <th>Code</th>
+                    <th>Level</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse($courses ?? [] as $course)
+                <tr>
+                    <td>{{ $course->id }}</td>
+                    <td><strong>{{ $course->name }}</strong></td>
+                    <td>{{ $course->code ?? 'N/A' }}</td>
+                    <td><span class="badge bg-info">{{ ucfirst($course->level ?? 'undergraduate') }}</span></td>
+                    <td>{{ $course->duration ?? 'N/A' }}</td>
+                    <td>
+                        <span class="badge bg-{{ $course->is_active ? 'success' : 'secondary' }}">
+                            {{ $course->is_active ? 'Active' : 'Inactive' }}
+                        </span>
+                    </td>
+                    <td class="text-end">
+                        <a href="{{ route('admin.courses.edit', $course->id) }}" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="7" class="text-center py-4 text-muted">No courses found.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,7 @@
+﻿  GET|HEAD        categories/{slug} categories.show ÔÇ║ CategoryController@show
+  GET|HEAD        category/{slug} ......... category ÔÇ║ CategoryController@show
+  GET|HEAD        job/{slug} ................... job.show ÔÇ║ JobController@show
+  GET|HEAD        jobs/search ............. jobs.search ÔÇ║ JobController@search
+  GET|HEAD        results/category/{slug} results.category ÔÇ║ ResultControllerÔÇª
+  GET|HEAD        results/search .... results.search ÔÇ║ ResultController@search
+  GET|HEAD        results/{slug} ........ results.show ÔÇ║ ResultController@show

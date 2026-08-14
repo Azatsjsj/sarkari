@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /debugbar/
+Disallow: /_debugbar/
+Sitemap: https://sarkariresult.mobi/sitemap.xml
+
+# Crawl delay for heavy sites
+Crawl-delay: 1
+
+# Host
+Host: https://sarkariresult.mobi

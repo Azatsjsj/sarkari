@@ -1,0 +1,40 @@
+# robots.txt for Job Portal Website
+# Allows search engines to crawl important pages while blocking sensitive areas
+
+User-agent: *
+Allow: /
+Allow: /jobs
+Allow: /jobs/*
+Allow: /results
+Allow: /results/*
+Allow: /admit-cards
+Allow: /admit-cards/*
+Allow: /answer-keys
+Allow: /answer-keys/*
+Allow: /documents
+Allow: /documents/*
+Allow: /categories
+Allow: /categories/*
+Allow: /sitemap.xml
+Allow: /sitemap/*.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /logout
+Disallow: /register
+Disallow: /password/reset
+Disallow: /password/email
+Disallow: /user/
+Disallow: /profile/
+Disallow: /api/
+Disallow: /vendor/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /*.zip$
+
+# Specify sitemap location
+Sitemap: https://sarkariresult.mobi/sitemap.xml
+Sitemap: https://sarkariresult.mobi/sitemap
+

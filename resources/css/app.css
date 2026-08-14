@@ -1,0 +1,253 @@
+/* resources/css/app.css */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Custom Variables */
+:root {
+    --primary-color: #0d47a1;
+    --secondary-color: #e65100;
+    --success-color: #2e7d32;
+    --dark-bg: #1a1a1a;
+    --transition-speed: 0.3s;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+}
+
+.logo .sarkari {
+    color: #e65100;
+}
+
+.logo .result {
+    color: #2e7d32;
+}
+
+.logo .mobi {
+    color: #0d47a1;
+    font-size: 0.9em;
+}
+
+/* Navigation Styles */
+.navbar {
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) ease;
+}
+
+.navbar-nav .nav-link {
+    transition: color var(--transition-speed) ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffc107 !important;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ffc107;
+    transform: scaleX(1);
+    transition: transform var(--transition-speed) ease;
+}
+
+/* Search Form */
+.search-form .input-group {
+    min-width: 250px;
+}
+
+@media (max-width: 992px) {
+    .search-form {
+        margin: 1rem 0;
+    }
+    
+    .search-form .input-group {
+        width: 100%;
+    }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-speed) ease;
+}
+
+.loading-spinner.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+/* Notification Badge */
+.notification-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer Hover Effects */
+.hover-text-warning:hover {
+    color: #ffc107 !important;
+    transition: color var(--transition-speed) ease;
+}
+
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    .table-responsive-stack {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .card-deck {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Accessibility */
+.visually-hidden-focusable:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: white;
+    padding: 10px;
+    color: black;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .back-to-top,
+    .disclaimer,
+    footer {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
+
+/* Performance Optimizations */
+img {
+    loading: lazy;
+    width: auto;
+    height: auto;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    transition: all var(--transition-speed) ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Form Controls */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 71, 161, 0.25);
+}

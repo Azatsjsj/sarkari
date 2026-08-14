@@ -1,0 +1,6 @@
+﻿
+  GET|HEAD       admin/results/{result} admin.results.show ÔÇ║ Admin\ResultContÔÇª
+  GET|HEAD       results/{slug} ......... results.show ÔÇ║ ResultController@show
+
+                                                            Showing [2] routes
+
